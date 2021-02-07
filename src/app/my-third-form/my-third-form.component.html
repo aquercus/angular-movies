@@ -1,0 +1,20 @@
+<h2>Movie Update2</h2>
+<label>
+  imdbID
+  <input type="text"  #imdbID (change)="changeImdbId($event)">
+</label>
+<label>
+  title
+  <input type="text"  #title>
+</label>
+<label>
+  year
+  <input type="text"  #year>
+</label>
+<label>
+  rating
+  <input type="text"  #rating>
+</label>
+
+<input type="button" value="Get" (click)="get()"> <input type="button" value="Update" (click)="update()">
+

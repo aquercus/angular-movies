@@ -7,6 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { MyFirstFormComponent } from './my-first-form/my-first-form.component';
 import { MySecondFormComponent } from './my-second-form/my-second-form.component';
 import { MyThirdFormComponent } from './my-third-form/my-third-form.component';
+import { MyInputFieldComponent } from './my-input-field/my-input-field.component';
+import { MyForthFormComponent } from './my-forth-form/my-forth-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MyThirdFormComponent } from './my-third-form/my-third-form.component';
     MyCompComponent,
     MyFirstFormComponent,
     MySecondFormComponent,
-    MyThirdFormComponent
+    MyThirdFormComponent,
+    MyInputFieldComponent,
+    MyForthFormComponent
   ],
   imports: [
     BrowserModule,

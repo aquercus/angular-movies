@@ -1,0 +1,8 @@
+<h2>Movie Update3</h2>
+<app-my-input-field [label]="'imdbID'" [inputValue]="imdbId"  (outputValueEvent)="changeImdbId($event)"></app-my-input-field>
+<app-my-input-field [label]="'title'" [inputValue]="title"  (outputValueEvent)="changeTitle($event)"></app-my-input-field>
+<app-my-input-field [label]="'year'" [inputValue]="year"  (outputValueEvent)="changeYear($event)"></app-my-input-field>
+<app-my-input-field [label]="'rating'" [inputValue]="rating"  (outputValueEvent)="changeRating($event)"></app-my-input-field>
+
+<input type="button" value="Get" (click)="get()"> <input type="button" value="Update" (click)="update()">
+

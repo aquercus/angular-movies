@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {MyBackendService} from '../my-backend.service';
+import {Movie} from '../movie';
 
 @Component({
   selector: 'app-my-forth-form',
@@ -12,23 +14,20 @@ export class MyForthFormComponent implements OnInit {
   year : number = 0;
   rating : number = 0;
 
-  httpClient : HttpClient;
 
+   constructor(private httpClient : HttpClient,
+              private myBackendService : MyBackendService) {}
 
-  constructor(httpClient : HttpClient) {
-    this.httpClient = httpClient;
-  }
   ngOnInit(): void {
   }
 
   get(): void{
     console.log("Get button clicked");
-
+    let obs = this.myBackendService.get(this.imdbId);
     //this.imdbId = this.inputImdbId.nativeElement.value;
     console.log(this.imdbId);
 
-    let obs = this.httpClient.get("http://localhost:8080/movies/" + this.imdbId);
-    obs.subscribe((movie : any) =>{
+    obs.subscribe((movie : Movie) =>{
       console.log(movie);
       this.imdbId = movie.imdbId;
       this.title = movie.title;
@@ -42,15 +41,16 @@ export class MyForthFormComponent implements OnInit {
   update() : void {
     console.log("Update button clicked");
 
-
-    let obs = this.httpClient.put("http://localhost:8080/movies/" + this.imdbId,
+    let obs = this.myBackendService.update(
       {
         imdbId: this.imdbId,
-        title : this.title,
-        year  : this.year,
+        title: this.title,
+        year: this.year,
         rating: this.rating
-      });
+      }
+    );
     obs.subscribe();
+
   }
 
 

@@ -9,6 +9,8 @@ import { MySecondFormComponent } from './my-second-form/my-second-form.component
 import { MyThirdFormComponent } from './my-third-form/my-third-form.component';
 import { MyInputFieldComponent } from './my-input-field/my-input-field.component';
 import { MyForthFormComponent } from './my-forth-form/my-forth-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MySelectMovieComponent } from './my-select-movie/my-select-movie.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { MyForthFormComponent } from './my-forth-form/my-forth-form.component';
     MySecondFormComponent,
     MyThirdFormComponent,
     MyInputFieldComponent,
-    MyForthFormComponent
+    MyForthFormComponent,
+    MySelectMovieComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

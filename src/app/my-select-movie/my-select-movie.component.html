@@ -1,0 +1,4 @@
+<h2>Movie Select</h2>
+<app-my-input-field [label]="'imdbID'" [inputValue]="imdbId"  (outputValueEvent)="changeImdbId($event)"></app-my-input-field>
+
+<input type="button" value="Get" (click)="get()">

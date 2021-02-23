@@ -19,6 +19,13 @@ export class MyForthFormComponent implements OnInit {
               private myBackendService : MyBackendService) {}
 
   ngOnInit(): void {
+     let movie = this.myBackendService.currentMovie;
+     if (movie) {
+       this.imdbId = movie.imdbId;
+       this.title = movie.title;
+       this.year = movie.year;
+       this.rating = movie.rating;
+     }
   }
 
   get(): void{

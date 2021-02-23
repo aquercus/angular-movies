@@ -6,6 +6,7 @@ import {Movie} from './movie';
   providedIn: 'root'
 })
 export class MyBackendService {
+  private _currentMovie: Movie;
 
   constructor(private httpClient : HttpClient) { }
 
@@ -28,4 +29,12 @@ export class MyBackendService {
       });
 
   };
+
+  get currentMovie(): Movie {
+    return this._currentMovie;
+  }
+
+  set currentMovie(value: Movie) {
+    this._currentMovie = value;
+  }
 }

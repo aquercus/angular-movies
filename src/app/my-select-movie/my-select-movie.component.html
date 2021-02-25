@@ -1,4 +1,9 @@
 <h2>Movie Select</h2>
+<div style="background-color: #c8dff5; width: 100%" *ngIf="ifError">
+<p style="color: crimson">
+  {{errorMessage}}
+</p>
+</div>
 <app-my-input-field [label]="'imdbID'" [inputValue]="imdbId"  (outputValueEvent)="changeImdbId($event)"></app-my-input-field>
 
 <input type="button" value="Get" (click)="get()">

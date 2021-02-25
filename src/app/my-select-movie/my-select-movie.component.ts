@@ -14,6 +14,8 @@ export class MySelectMovieComponent implements OnInit {
   title : string = '';
   year : number = 0;
   rating : number = 0;
+  errorMessage : string = 'no error';
+  ifError : boolean = false;
 
 
   constructor(private httpClient : HttpClient,
@@ -38,7 +40,12 @@ export class MySelectMovieComponent implements OnInit {
       this.year = movie.year;
       this.rating = movie.rating;
       this.router.navigateByUrl('update');
-    })
+    },
+      (error)=>{
+      console.log("ERROR",error);
+      this.errorMessage = 'Movie not found';
+      this.ifError = true;
+      })
 
   }
 
